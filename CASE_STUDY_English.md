@@ -76,4 +76,4 @@ Deploying the pipeline as an API (FastAPI + Docker), integrating a cloud LLM alo
 
 ---
 
-*Full source code: see the [technical README](./README.md)*
+*Full source code: see the [technical README](./README_English.md)*

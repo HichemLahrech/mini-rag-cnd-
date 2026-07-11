@@ -76,4 +76,4 @@ Déploiement du pipeline en API (FastAPI + Docker), intégration d'un LLM cloud 
 
 ---
 
-*Code source complet : voir le [README technique](./README.md)*
+*Code source complet : voir le [README technique](./README_French.md) — Case study aussi disponible en [anglais](./CASE_STUDY_English.md)*
