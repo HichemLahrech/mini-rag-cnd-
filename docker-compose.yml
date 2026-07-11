@@ -1,0 +1,26 @@
+﻿services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      # La base ChromaDB est gÃ©nÃ©rÃ©e par ingest.py sur la machine hÃ´te, PAS
+      # incluse dans l'image (voir .dockerignore) : elle est montÃ©e en
+      # lecture seule. Il faut avoir lancÃ© `python ingest.py` en dehors de
+      # Docker avant de dÃ©marrer ce service.
+      - ./chroma_db:/app/chroma_db
+    environment:
+      # host.docker.internal : rÃ©sout vers l'adresse IP de la machine hÃ´te
+      # depuis l'intÃ©rieur du conteneur. Fonctionne nativement sous Docker
+      # Desktop (Windows/Mac) ; sous Linux, nÃ©cessite le extra_hosts
+      # ci-dessous (rÃ©solution manuelle, absente par dÃ©faut sur ce systÃ¨me).
+      - OLLAMA_URL=http://host.docker.internal:11434/api/generate
+      # Optionnelles : laissÃ©es vides si non dÃ©finies dans l'environnement
+      # d'oÃ¹ `docker compose up` est lancÃ© (voir .env.example).
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - API_KEY=${API_KEY:-}
+    extra_hosts:
+      # No-op sous Docker Desktop (dÃ©jÃ  gÃ©rÃ© nativement), nÃ©cessaire sous
+      # Linux pour que host.docker.internal fonctionne.
+      - "host.docker.internal:host-gateway"
+
