@@ -21,6 +21,7 @@ Prérequis :
 """
 
 import argparse
+import os
 
 import requests
 import chromadb
@@ -48,8 +49,12 @@ RERANK_MODEL = "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1"
 CANDIDATE_K = 20  # nombre de candidats remontés par le bi-encoder avant reranking
 FINAL_K = 5       # nombre de chunks finalement injectés dans le prompt
 
-OLLAMA_URL = "http://localhost:11434/api/generate"
-OLLAMA_MODEL = "llama3.1:8b"  # doit correspondre au modèle téléchargé avec `ollama pull`
+OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434/api/generate")
+# ⚠️ Important en conteneur Docker : "localhost" désignerait le conteneur
+# lui-même, pas la machine hôte où tourne Ollama. Il faut alors définir
+# OLLAMA_URL explicitement (ex: http://host.docker.internal:11434/api/generate
+# sous Docker Desktop) — voir docker-compose.yml.
+OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "llama3.1:8b")  # doit correspondre au modèle téléchargé avec `ollama pull`
 
 
 def build_where_filter(

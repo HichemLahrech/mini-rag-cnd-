@@ -1,0 +1,15 @@
+venv/
+venv-finetune/
+finetune/
+data/
+chroma_db/
+__pycache__/
+*.pyc
+.git/
+.gitignore
+*.md
+eval_set.json
+eval.py
+ingest.py
+inspect_metadata.py
+.env
