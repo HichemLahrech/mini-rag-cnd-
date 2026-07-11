@@ -1,0 +1,42 @@
+[
+  {
+    "question": "Quelle méthode combine les courants de Foucault et la thermographie pour quantifier la profondeur des fissures RCF (Rolling Contact Fatigue) ?",
+    "expected_sources": ["2-Yi Liu 2022.pdf"],
+    "note": "ECPT (Eddy Current Pulsed Thermography) est le sujet central et exclusif de cet article."
+  },
+  {
+    "question": "Quel est le taux d'erreur de quantification de profondeur de fissure obtenu en mode stationnaire versus en mode balayage avec la méthode ECPT ?",
+    "expected_sources": ["2-Yi Liu 2022.pdf"],
+    "note": "Chiffres précis (skewness, erreur moyenne ±8.1%) uniquement dans cet article."
+  },
+  {
+    "question": "Quels essais dynamiques par Ultrasons-Laser et EMAT ont été réalisés pour étudier la détection de fissures surfaciques précoces avec mouvement relatif entre l'échantillon et les instruments de mesure ?",
+    "expected_sources": ["4-NDAO 2016.pdf"],
+    "note": "Thèse dont c'est l'objet d'étude expérimental spécifique (dispositifs dynamiques)."
+  },
+  {
+    "question": "Quelle est la précision (taux de rappel) d'un système d'inspection visuelle de défauts de rail par drone (UAV) ?",
+    "expected_sources": ["1-Milica Micic 2023.pdf"],
+    "note": "Chiffres précis (recall 93.75% / 94.26%) cités uniquement dans cette revue."
+  },
+  {
+    "question": "Quel système de chauffage par induction est étudié pour le dégivrage des aiguillages de voie ferrée ?",
+    "expected_sources": ["5-Hyeong-Seok Oh 2019.pdf"],
+    "note": "Seul article du corpus sur ce sujet (hors-CND, sert de test que le retrieval sémantique fonctionne même sur un article non taggé CND)."
+  },
+  {
+    "question": "Quels sont les avantages et les inconvénients des EMAT en contrôle non destructif ?",
+    "expected_sources": ["4-NDAO 2016.pdf", "1-Milica Micic 2023.pdf"],
+    "note": "Les deux articles couvrent les EMAT ; plusieurs sources valides acceptées."
+  },
+  {
+    "question": "Quels sont les avantages et inconvénients de la méthode MFL (Magnetic Flux Leakage) pour la détection de défauts de rail ?",
+    "expected_sources": ["1-Milica Micic 2023.pdf", "4-NDAO 2016.pdf"],
+    "note": "Les deux articles couvrent MFL ; plusieurs sources valides acceptées."
+  },
+  {
+    "question": "Quels sont les coûts et la stratégie de développement du réseau ferroviaire à grande vitesse en Corée du Sud ?",
+    "expected_sources": ["3-CHOI Jin-Seok 2014.pdf"],
+    "note": "Seul document du corpus traitant de politique/économie ferroviaire coréenne (hors-CND)."
+  }
+]

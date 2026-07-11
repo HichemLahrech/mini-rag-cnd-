@@ -1,0 +1,25 @@
+# Dependances specifiques au fine-tuning QLoRA -- separees de requirements.txt
+# (le pipeline RAG) pour ne pas alourdir l'installation si tu ne fais que du RAG.
+#
+# Installation : pip install -r finetune/requirements-finetune.txt
+#
+# NOTE : trl est passe en v1.x (2026), avec une API SFTTrainer/SFTConfig
+# assez differente des tutoriels bases sur trl 0.9.x qu'on trouve encore
+# beaucoup en ligne (tokenizer= -> processing_class=, max_seq_length ->
+# max_length sur SFTConfig, dataset_text_field/completion_only_loss sur
+# SFTConfig plutot que sur SFTTrainer). train_qlora.py est ecrit pour cette
+# API courante -- ne pas figer trl sur une vieille version 0.9.x sans
+# adapter le script en consequence.
+#
+# NOTE bitsandbytes : le support Windows/CUDA n'est mature que depuis le
+# systeme "multi-backend" (0.45+). Des versions anterieures (0.43.x) n'ont
+# pas de wheel Windows CUDA correcte.
+
+transformers>=4.46.0
+peft>=0.13.0
+bitsandbytes>=0.45.0
+accelerate>=0.34.0
+trl>=1.0.0
+datasets>=2.20.0
+chromadb>=0.5.0
+requests>=2.31.0
